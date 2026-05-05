@@ -410,6 +410,47 @@
     font-style: italic;
   }
 
+  /* SHOPPING LIST */
+  .shop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 560px) { .shop-grid { grid-template-columns: 1fr; } }
+
+  .shop-cat {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+  }
+
+  .shop-cat-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .shop-items { display: flex; flex-direction: column; gap: 6px; }
+
+  .shop-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+  }
+  .shop-check { color: var(--sage); font-size: 15px; flex-shrink: 0; cursor: pointer; }
+  .shop-name  { flex: 1; color: var(--text); }
+  .shop-qty   { color: var(--text-light); font-size: 12px; white-space: nowrap; }
+
+  .shop-item.shop-family .shop-name { color: var(--text-mid); }
+  .shop-item.shop-family .shop-check { color: #9090c0; }
+
   /* FOOTER */
   .footer {
     text-align: center;
@@ -762,10 +803,116 @@
 
   </div>
 
+  </div>
+
+  <!-- SHOPPING LIST -->
+  <div class="section-title" style="margin-top:36px">🛒 Список покупок на неделю</div>
+  <p style="font-size:13px;color:var(--text-mid);margin-bottom:20px;">Семья: 2 взрослых + ребёнок 1.5 года · Закупка раз в неделю</p>
+
+  <div class="shop-grid">
+
+    <div class="shop-cat">
+      <div class="shop-cat-title">🍗 Белки</div>
+      <div class="shop-items">
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Куриные грудки</span><span class="shop-qty">1.5–2 кг</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Куриные бёдра (б/к)</span><span class="shop-qty">500 г</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Тунец в воде (консерва)</span><span class="shop-qty">3–4 банки</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Яйца</span><span class="shop-qty">12 шт.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Белый сыр 5%</span><span class="shop-qty">2 пачки</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Творожный сыр</span><span class="shop-qty">1 пачка</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Белковый йогурт (~20 г)</span><span class="shop-qty">4–5 шт.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Обычный йогурт</span><span class="shop-qty">4–5 шт.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Молоко (для кофе)</span><span class="shop-qty">1–2 л</span></div>
+      </div>
+    </div>
+
+    <div class="shop-cat">
+      <div class="shop-cat-title">🥦 Овощи</div>
+      <div class="shop-items">
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Огурцы</span><span class="shop-qty">1 кг</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Помидоры</span><span class="shop-qty">1 кг</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Перец (разные цвета)</span><span class="shop-qty">4–5 шт.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Морковь</span><span class="shop-qty">500 г</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Брокколи</span><span class="shop-qty">1 шт.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Цукини</span><span class="shop-qty">2 шт.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Руккола / шпинат (пакет)</span><span class="shop-qty">1–2 пачки</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Чеснок</span><span class="shop-qty">1 головка</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Лук</span><span class="shop-qty">3–4 шт.</span></div>
+      </div>
+    </div>
+
+    <div class="shop-cat">
+      <div class="shop-cat-title">🍑 Фрукты</div>
+      <div class="shop-items">
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Бананы</span><span class="shop-qty">1 гроздь</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Персики / нектарины</span><span class="shop-qty">4–5 шт.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Арбуз / дыня</span><span class="shop-qty">1 шт.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Яблоки (для малыша)</span><span class="shop-qty">4–5 шт.</span></div>
+      </div>
+    </div>
+
+    <div class="shop-cat">
+      <div class="shop-cat-title">🌾 Углеводы / крупы</div>
+      <div class="shop-items">
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Цельнозерновой хлеб</span><span class="shop-qty">1 буханка</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Овсянка / Квакер</span><span class="shop-qty">1 упак.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Семена чиа</span><span class="shop-qty">1 пачка</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Нут (консерва или сухой)</span><span class="shop-qty">2 банки</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Булгур / чечевица</span><span class="shop-qty">по 200 г</span></div>
+        <div class="shop-item shop-family"><span class="shop-check">☐</span><span class="shop-name">Макароны / рис (семья)</span><span class="shop-qty">500 г</span></div>
+        <div class="shop-item shop-family"><span class="shop-check">☐</span><span class="shop-name">Каша для малыша</span><span class="shop-qty">1 упак.</span></div>
+      </div>
+    </div>
+
+    <div class="shop-cat">
+      <div class="shop-cat-title">🥑 Жиры / соусы</div>
+      <div class="shop-items">
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Арахисовая паста (без сахара)</span><span class="shop-qty">1 банка</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Тхина</span><span class="shop-qty">1 банка</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Авокадо</span><span class="shop-qty">2–3 шт.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Оливковое масло</span><span class="shop-qty">есть дома?</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Оливки</span><span class="shop-qty">1 банка</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Клюква сушёная</span><span class="shop-qty">1 пачка</span></div>
+      </div>
+    </div>
+
+    <div class="shop-cat">
+      <div class="shop-cat-title">☕ Напитки / прочее</div>
+      <div class="shop-items">
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Кофе</span><span class="shop-qty">есть дома?</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Лимоны</span><span class="shop-qty">3–4 шт.</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Паприка молотая</span><span class="shop-qty">специя</span></div>
+        <div class="shop-item"><span class="shop-check">☐</span><span class="shop-name">Соль / перец</span><span class="shop-qty">специя</span></div>
+        <div class="shop-item shop-family"><span class="shop-check">☐</span><span class="shop-name">Пюре / питание для малыша</span><span class="shop-qty">по потребности</span></div>
+      </div>
+    </div>
+
+  </div>
+  <div style="font-size:12px;color:var(--text-light);margin-bottom:36px;">
+    <span style="display:inline-block;background:#f0f0ff;border:1px solid #d0d0f0;border-radius:20px;padding:3px 10px;font-size:11px;">🏠 Семейные продукты</span> — отмечены для всей семьи, не только для диеты
+  </div>
+
   <div class="footer">
     Этот план составлен индивидуально — следуйте ему и проконсультируйтесь с диетологом при любых вопросах.
   </div>
 
 </div>
 </body>
+<script>
+  document.querySelectorAll('.shop-check').forEach(function(el) {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', function() {
+      const item = this.closest('.shop-item');
+      if (this.textContent === '☐') {
+        this.textContent = '☑';
+        item.style.opacity = '0.4';
+        item.querySelector('.shop-name').style.textDecoration = 'line-through';
+      } else {
+        this.textContent = '☐';
+        item.style.opacity = '1';
+        item.querySelector('.shop-name').style.textDecoration = 'none';
+      }
+    });
+  });
+</script>
 </html>

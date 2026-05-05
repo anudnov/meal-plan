@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>План питания</title>
+<title>План питания — Алексей</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -163,6 +163,50 @@
     margin-top: 8px;
   }
 
+  /* ALTERNATIVES */
+  .alt-block {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-top: -8px;
+    margin-bottom: 16px;
+    margin-left: 90px;
+  }
+  @media (max-width: 600px) { .alt-block { margin-left: 70px; } }
+
+  .alt-header {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 500;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .alt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 580px) { .alt-grid { grid-template-columns: 1fr; } }
+
+  .alt-card {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+  }
+  .alt-title {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
   /* RULES SECTION */
   .section-title {
     font-family: 'Playfair Display', serif;
@@ -271,8 +315,8 @@
 <div class="page">
 
   <div class="header">
-    <div class="label-top">Маккаби · Диетолог · </div>
-    <h1>План<br>питания <span> </span></h1>
+    <div class="label-top">Маккаби · Диетолог Сигаль Пинко</div>
+    <h1>План<br>питания <span>Алексея</span></h1>
     <div class="subtitle">Диабетическая диета · Контроль углеводов</div>
   </div>
 
@@ -297,6 +341,46 @@
           <li>Кофе</li>
         </ul>
         <span class="carbs-tag">~1 порция углеводов</span>
+      </div>
+    </div>
+
+    <!-- BREAKFAST ALTERNATIVES -->
+    <div class="alt-block">
+      <div class="alt-header">
+        <span class="alt-icon">🔀</span>
+        <span>Альтернативы завтраку</span>
+      </div>
+      <div class="alt-grid">
+        <div class="alt-card">
+          <div class="alt-title">🥚 Яичный</div>
+          <ul class="meal-items">
+            <li>2 яйца (омлет / скрэмбл)</li>
+            <li>1 кусок хлеба</li>
+            <li>Салат / помидор / огурец</li>
+            <li>Кофе</li>
+          </ul>
+          <span class="carbs-tag">Яйца — макс. 4×/нед.</span>
+        </div>
+        <div class="alt-card">
+          <div class="alt-title">🧀 Бутербродный</div>
+          <ul class="meal-items">
+            <li>1 кусок хлеба</li>
+            <li>½ пачки сыра 5% или творожный</li>
+            <li>Авокадо или оливки</li>
+            <li>Помидор / огурец + кофе</li>
+          </ul>
+          <span class="carbs-tag">Быстро, без готовки</span>
+        </div>
+        <div class="alt-card">
+          <div class="alt-title">🥣 Чиа-пудинг</div>
+          <ul class="meal-items">
+            <li>3 ст. л. семян чиа</li>
+            <li>½ стакана молока — замочить с вечера</li>
+            <li>½ персика или кусочки дыни</li>
+            <li>½ ч. л. арахисовой пасты</li>
+          </ul>
+          <span class="carbs-tag">Медленный сахар</span>
+        </div>
       </div>
     </div>
 
@@ -406,8 +490,8 @@
   </div>
 
   <div class="footer">
-    <strong>Диетолог:</strong> · Маккаби · Холон · <br>
-    <strong>Телефон:</strong> 1 · <strong>1</strong> 1 <br>
+    <strong>Диетолог:</strong> Сигаль Пинко · Маккаби · Холон, Рафаэль Эйтан 4<br>
+    <strong>Телефон:</strong> 03-746-3440 · <strong>Код направления:</strong> 488918380<br>
     <br>
     Этот план составлен индивидуально — следуйте ему и проконсультируйтесь с диетологом при любых вопросах.
   </div>

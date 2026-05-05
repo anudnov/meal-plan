@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>План питания</title>
+<title>План питания — Алексей</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -348,6 +348,68 @@
     border: 1px solid var(--border);
   }
 
+  /* FOOD CATEGORIES */
+  .food-categories { display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+
+  .food-cat {
+    border-radius: 16px;
+    padding: 18px 22px;
+    border: 1px solid var(--border);
+  }
+  .cat-protein { background: #fdf6ee; border-color: #f0d8b8; }
+  .cat-carb    { background: #f5f0fa; border-color: #d8ccee; }
+  .cat-veg     { background: #eef5ee; border-color: #bcd8be; }
+  .cat-fat     { background: #f5faf0; border-color: #c8ddb8; }
+  .cat-avoid   { background: #fdf0f0; border-color: #f0c0c0; }
+
+  .cat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .cat-emoji { font-size: 20px; }
+  .cat-name  { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; }
+  .cat-badge {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.06);
+    border-radius: 20px;
+    padding: 3px 10px;
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+  .cat-badge-warn  { background: #f0e0c0; color: #8b5a10; }
+  .cat-badge-green { background: #c8e8c8; color: #2a6030; }
+  .cat-badge-red   { background: #f0c0c0; color: #8b2020; }
+
+  .food-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .food-tags span {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .avoid-tags span {
+    background: rgba(255,200,200,0.3);
+    border-color: #f0b0b0;
+    color: #7a2020;
+  }
+  .cat-note {
+    font-size: 12px;
+    color: var(--text-light);
+    font-style: italic;
+  }
+
   /* FOOTER */
   .footer {
     text-align: center;
@@ -371,8 +433,7 @@
 <div class="page">
 
   <div class="header">
-    <div class="label-top">Маккаби · Диетолог</div>
-    <h1>План<br>питания <span></span></h1>
+    <h1>План питания</h1>
     <div class="subtitle">Диабетическая диета · Контроль углеводов</div>
   </div>
 
@@ -535,6 +596,46 @@
       </div>
     </div>
 
+    <!-- DINNER ALTERNATIVES -->
+    <div class="alt-block">
+      <div class="alt-header">
+        <span class="alt-icon">🔀</span>
+        <span>Альтернативы ужину</span>
+      </div>
+      <div class="alt-grid">
+        <div class="alt-card">
+          <div class="alt-title">🍗 Холодная куриная тарелка</div>
+          <ul class="meal-items">
+            <li>Грудка из холодильника (заранее приготовлена)</li>
+            <li>Огурец + помидор + руккола</li>
+            <li>Тхина или ¼ авокадо</li>
+          </ul>
+          <span class="carbs-tag">0 готовки вечером</span>
+        </div>
+        <div class="alt-card">
+          <div class="alt-title">🥙 Хлеб с курицей</div>
+          <ul class="meal-items">
+            <li>1 кусок хлеба</li>
+            <li>Нарезанная грудка + ½ пачки сыра</li>
+            <li>Салат рядом</li>
+          </ul>
+          <span class="carbs-tag">1 порция углеводов</span>
+        </div>
+        <div class="alt-card">
+          <div class="alt-title">🍳 Быстрая жареная грудка</div>
+          <ul class="meal-items">
+            <li>Грудка полосками — соль + паприка + чеснок</li>
+            <li>Сковорода 8–10 минут</li>
+            <li>Свежий салат рядом</li>
+          </ul>
+          <span class="carbs-tag">Разморозить с утра!</span>
+        </div>
+      </div>
+      <div class="shum-tip" style="margin-top:12px;margin-bottom:0">
+        💡 <strong>Лайфхак:</strong> Купи грудки → нарежь на порции → заморозь плоско. Одна порция размораживается в холодной воде за 20–30 минут, даже если забыл с утра.
+      </div>
+    </div>
+
   </div>
 
   <div class="section-title">Правила и ограничения</div>
@@ -580,10 +681,88 @@
     </div>
   </div>
 
+  <!-- FOOD CATEGORIES -->
+  <div class="section-title">Продукты по категориям</div>
+
+  <div class="food-categories">
+
+    <div class="food-cat cat-protein">
+      <div class="cat-header">
+        <span class="cat-emoji">🍗</span>
+        <span class="cat-name">Белки</span>
+        <span class="cat-badge">без ограничений*</span>
+      </div>
+      <div class="food-tags">
+        <span>Куриная грудка</span><span>Куриные бёдра</span><span>Тунец (консерва)</span>
+        <span>Яйца (макс. 4×/нед.)</span><span>Творожный сыр 5%</span><span>Сыр белый 5%</span>
+        <span>Греческий йогурт</span><span>Белковый йогурт</span><span>Рыба (запечённая)</span>
+        <span>Лосось</span><span>Сардины</span>
+      </div>
+      <div class="cat-note">* Порция ~20 г белка за приём</div>
+    </div>
+
+    <div class="food-cat cat-carb">
+      <div class="cat-header">
+        <span class="cat-emoji">🌾</span>
+        <span class="cat-name">Углеводы</span>
+        <span class="cat-badge cat-badge-warn">1 порция за приём</span>
+      </div>
+      <div class="food-tags">
+        <span>Цельнозерновой хлеб (1 кусок)</span><span>Овсянка / Квакер (3 ст. л.)</span>
+        <span>Нут (½ стакана)</span><span>Булгур (½ стакана)</span>
+        <span>Чечевица (½ стакана)</span><span>Киноа (½ стакана)</span>
+        <span>Семена чиа</span><span>Бурый рис (½ стакана)</span>
+      </div>
+      <div class="cat-note">½ стакана готового = 1 порция</div>
+    </div>
+
+    <div class="food-cat cat-veg">
+      <div class="cat-header">
+        <span class="cat-emoji">🥦</span>
+        <span class="cat-name">Овощи</span>
+        <span class="cat-badge cat-badge-green">свободно</span>
+      </div>
+      <div class="food-tags">
+        <span>Огурец</span><span>Помидор</span><span>Перец</span><span>Капуста</span>
+        <span>Морковь</span><span>Брокколи</span><span>Цукини</span><span>Баклажан</span>
+        <span>Цветная капуста</span><span>Руккола</span><span>Шпинат</span>
+        <span>Сельдерей</span><span>Лук</span><span>Чеснок</span>
+      </div>
+      <div class="cat-note">Основа каждого приёма пищи</div>
+    </div>
+
+    <div class="food-cat cat-fat">
+      <div class="cat-header">
+        <span class="cat-emoji">🥑</span>
+        <span class="cat-name">Полезные жиры</span>
+        <span class="cat-badge">умеренно</span>
+      </div>
+      <div class="food-tags">
+        <span>Арахисовая паста (½ ч. л.)</span><span>Авокадо (¼ шт.)</span>
+        <span>Тхина</span><span>Оливковое масло</span><span>Оливки</span>
+        <span>Миндаль (горсть)</span><span>Грецкие орехи</span>
+      </div>
+      <div class="cat-note">Помогают замедлить всасывание сахара</div>
+    </div>
+
+    <div class="food-cat cat-avoid">
+      <div class="cat-header">
+        <span class="cat-emoji">🚫</span>
+        <span class="cat-name">Избегать</span>
+        <span class="cat-badge cat-badge-red">ограничить / убрать</span>
+      </div>
+      <div class="food-tags avoid-tags">
+        <span>Белый хлеб / багет</span><span>Белый рис</span><span>Картофель</span>
+        <span>Фалафель</span><span>Сладкие йогурты</span><span>Сок фруктовый</span>
+        <span>Мёд / варенье</span><span>Сладкое (печенье, торты)</span>
+        <span>Майонезные соусы</span><span>Готовые снеки / чипсы</span>
+        <span>Несколько углеводов в одной тарелке</span>
+      </div>
+    </div>
+
+  </div>
+
   <div class="footer">
-    <strong>Диетолог:</strong> · Маккаби · Холон<br>
-    <strong> · </strong> · <strong> · </strong> · br>
-    <br>
     Этот план составлен индивидуально — следуйте ему и проконсультируйтесь с диетологом при любых вопросах.
   </div>
 
